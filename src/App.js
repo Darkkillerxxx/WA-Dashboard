@@ -12,11 +12,23 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars} from '@fortawesome/free-solid-svg-icons';
 import Login from './Components/Login';
-import Test from './Test';
 import Dashboard from './Components/Dashboard';
 import SideMenu from './Components/SideMenu';
-import { connect }from 'react-redux'
-import {setLogin} from './Store/Actions/ActionMain'
+import { connect }from 'react-redux';
+import {setLogin} from './Store/Actions/ActionMain';
+import SendWA from './Components/SendWA';
+import WAReport from './Components/WAReport';
+import Scrub from './Components/Scrub';
+import Invoice from './Components/Invoice';
+import VCapi from './Components/VCapi';
+import VCReport from './Components/VCReport';
+import SendVoice from './Components/SendVoice';
+import TransactionLogs from './Components/TransactionalLogs';
+import AddContacts from './Components/AddContact'
+import AddGroup from './Components/AddGroup';
+import ManageContact from './Components/ManageContact';
+import ManageGroup from './Components/ManageGroup';
+import BulkContact from './Components/BulkContacts';
 
 class App extends React.Component {
     constructor()
@@ -52,6 +64,7 @@ class App extends React.Component {
   render() {
     return (
         <>
+        <Router>
           {this.state.isLoggedIn ? 
           <nav className="navbar navbar-dark bg-success">
             <ul className="navbar-nav mr-auto">
@@ -66,24 +79,64 @@ class App extends React.Component {
             <div className="row">
               {this.state.isLoggedIn ? 
               <div className="col-lg-3 col-xl-2">
-                <div className="h-100 bg-dark dashboard-menu" style={{height:'75%'}}>
+                <div className="bg-dark dashboard-menu" style={{height:'100vh'}}>
                   <SideMenu />
                 </div>
               </div>:null}
 
               <div className={this.state.isLoggedIn ? "col-lg-9 col-xl-10":"col-12"}>
-                <Router>
+                
                   <Switch>
                     <Route exact path="/">
                       <Login Login={this.setLogin}/>
                     </Route>
                     <Route exact path="/dashboard">
-                      <Dashboard/>
+                      <Dashboard />
+                    </Route>
+                    <Route exact path="/sendWA">
+                      <SendWA />
+                    </Route>
+                    <Route exact path="/WAReport">
+                      <WAReport />
+                    </Route>
+                    <Route exact path="/Scrub">
+                      <Scrub />
+                    </Route>
+                    <Route exact path="/Invoice">
+                      <Invoice />
+                    </Route>
+                    <Route exact path="/Vcapi">
+                      <VCapi />
+                    </Route>
+                    <Route exact path="/VCReport">
+                      <VCReport />
+                    </Route>
+                    <Route exact path="/SendVoice">
+                      <SendVoice />
+                    </Route>
+                    <Route exact path="/TransactionalLogs">
+                      <TransactionLogs />
+                    </Route>
+                    <Route exact path="/AddContacts">
+                      <AddContacts />
+                    </Route>
+                    <Route exact path="/AddGroup">
+                      <AddGroup />
+                    </Route>
+                    <Route exact path="/ManageContact">
+                      <ManageContact />
+                    </Route>
+                    <Route exact path="/ManageGroup">
+                      <ManageGroup />
+                    </Route>
+                    <Route exact path="/BulkImportContacts">
+                      <BulkContact />
                     </Route>
                   </Switch>
-                </Router>
+                
               </div>
             </div>
+            </Router>
         </>
     );
   }  

@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
 
     render() {
         return (
-            <div className="Dashboard-Back">
+            <div className="Base-Back">
                 <div className="row">
                     <div className="col-12 Common-Headline mb-3">
                         <span><h3>Your Dashboard</h3></span>
