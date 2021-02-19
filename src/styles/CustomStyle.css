@@ -1,0 +1,49 @@
+@font-face {
+    font-family:"Open Sans";
+    src: url('./fonts/OpenSans-Regular.ttf');
+}
+
+#root{
+    font-family:"Open Sans";
+}
+
+.base-color{
+    background-color:#fafafa;
+}
+
+.login-card{
+    background-color:white;
+    z-index: 2;
+    padding:30px;
+}
+
+.login-base{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    z-index: 1;
+    height: 100vh !important;
+}
+
+.dashboard-menu{
+    box-shadow: 1px 1px #ccc;
+}
+
+.MenuLink:hover{
+    background-color: #28323e !important;
+}
+
+.Common-Headline{
+    border-bottom:1px solid #dfe2e7;
+}
+
+/* Dashboard Styles From Here */
+
+
+
+.Dashboard-Back{
+    width: 100%;
+    height: 100vh;
+    background-color:#fafafa;
+    padding:25px;
+}
